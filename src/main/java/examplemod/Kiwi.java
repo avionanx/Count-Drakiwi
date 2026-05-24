@@ -46,7 +46,7 @@ public class Kiwi {
 
   @EventListener
   public void onEngineStateChanged(final EngineStateChangeEvent event) {
-    if(event.engineState instanceof Battle) {
+    if(event.engineState instanceof Battle && this.isKiwiEncounter) {
       this.scriptAllocationListener = new ScriptAllocationListener(() -> this.scriptAllocationListener = null);
     }
   }
