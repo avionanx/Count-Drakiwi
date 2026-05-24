@@ -3,7 +3,10 @@ package examplemod;
 import legend.core.AddRegistryEvent;
 import legend.game.combat.Battle;
 import legend.game.combat.SBtld;
+import legend.game.combat.deff.RegisterDeffsEvent;
 import legend.game.combat.encounters.Encounter;
+import legend.game.inventory.SpellRegistryEvent;
+import legend.game.inventory.SpellStats0c;
 import legend.game.modding.events.battle.MonsterStatsEvent;
 import legend.game.modding.events.engine.EngineStateChangeEvent;
 import legend.game.modding.events.input.InputPressedEvent;
@@ -19,18 +22,18 @@ import static examplemod.KiwiEncounters.COUNT_DRAKIWI;
 import static legend.core.GameEngine.EVENTS;
 import static legend.game.EngineStates.currentEngineState_8004dd04;
 import static legend.game.Scus94491BpeSegment_8005.submapCut_80052c30;
-import static legend.game.combat.Monsters.monsterNames_80112068;
 import static legend.lodmod.LodMod.DARK_ELEMENT;
 import static legend.lodmod.LodMod.INPUT_ACTION_SMAP_INTERACT;
 
 @Mod(id = Kiwi.MOD_ID, version = "3.0.0")
 public class Kiwi {
-  public static final String MOD_ID = "examplemod";
+  public static final String MOD_ID = "drakiwi";
 
   private ScriptAllocationListener scriptAllocationListener;
   private boolean isKiwiEncounter;
 
-  public static final Registry<KiwiEncounter> KIWI_ENCOUNTER_REGISTRY = new KiwiEncounterRegistry();
+  public static final Registry<Encounter> KIWI_ENCOUNTER_REGISTRY = new KiwiEncounterRegistry();
+  public static final Registry<SpellStats0c> KIWI_SPELL_REGISTRY = new KiwiSpellRegistry();
 
   public Kiwi() {
     EVENTS.register(this);
@@ -81,10 +84,21 @@ public class Kiwi {
   @EventListener
   public void registerRegistries(final AddRegistryEvent event) {
     event.addRegistry(KIWI_ENCOUNTER_REGISTRY, RegisterKiwiEncounterEvent::new);
+    event.addRegistry(KIWI_SPELL_REGISTRY, RegisterKiwiSpellEvent::new);
   }
 
   @EventListener
   public void registerKiwiEncounters(final RegisterKiwiEncounterEvent event) {
     KiwiEncounters.register(event);
+  }
+
+  @EventListener
+  public void registerKiwiSpells(final SpellRegistryEvent event) {
+    KiwiSpells.register(event);
+  }
+
+  @EventListener
+  public void deffRegistry(final RegisterDeffsEvent event) {
+    KiwiDeffs.register(event);
   }
 }
