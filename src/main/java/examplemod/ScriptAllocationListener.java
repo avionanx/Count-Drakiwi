@@ -1,7 +1,6 @@
 package examplemod;
 
 import legend.game.modding.events.battle.MonsterStatsEvent;
-import legend.game.modding.events.scripting.ScriptAllocatedEvent;
 import legend.game.scripting.ScriptFile;
 import legend.game.unpacker.FileData;
 import legend.game.unpacker.Loader;
@@ -12,7 +11,6 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 
 import static legend.core.GameEngine.EVENTS;
-import static legend.core.GameEngine.SCRIPTS;
 import static legend.game.Scus94491BpeSegment_8006.battleState_8006e398;
 
 public class ScriptAllocationListener {
