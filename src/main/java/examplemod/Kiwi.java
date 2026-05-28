@@ -12,7 +12,6 @@ import legend.game.modding.events.engine.EngineStateChangeEvent;
 import legend.game.modding.events.input.InputPressedEvent;
 import legend.game.submap.SMap;
 import legend.game.submap.SubmapState;
-import org.joml.Vector3f;
 import org.legendofdragoon.modloader.Mod;
 import org.legendofdragoon.modloader.events.EventListener;
 import org.legendofdragoon.modloader.registries.Registry;

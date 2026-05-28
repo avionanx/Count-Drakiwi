@@ -29,7 +29,7 @@ public class ScriptAllocationListener {
     //if(event.scriptIndex == 11) {
       try {
         final Path path = Loader.resolve("..").normalize().toRealPath(LinkOption.NOFOLLOW_LINKS).resolve("mods/drakiwi/scripts/drakiwi");
-        final FileData file = Loader.loadFile(path);
+        final FileData file = Loader.loadFileSync(path);
         battleState_8006e398.monsterBents_e50[0].innerStruct_00.combatant_144.scriptPtr_10 = new ScriptFile("sucky sucky", file.getBytes());
       } catch(final IOException e) {
         throw new RuntimeException(e);
