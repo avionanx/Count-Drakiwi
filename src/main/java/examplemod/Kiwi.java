@@ -69,8 +69,8 @@ public class Kiwi {
 
       event.attack = 250;
       event.magicAttack = 200;
-      event.defence = 160;
-      event.magicDefence = 180;
+      event.defence = 180;
+      event.magicDefence = 280;
       event.speed = 60;
       event.statusResistFlag = 0xff;
       event.specialEffectFlag = 0x90;

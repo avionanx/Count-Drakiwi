@@ -16,6 +16,8 @@ public final class KiwiDeffs {
   public static final RegistryDelegate<DeffPackage> EXPLOSION = REGISTRAR.register("explosion", KiwiBossDeffPackage::new);
   public static final RegistryDelegate<DeffPackage> KIWI_RAIN = REGISTRAR.register("kiwi_rain", KiwiBossDeffPackage::new);
   public static final RegistryDelegate<DeffPackage> RAYS = REGISTRAR.register("rays", KiwiBossDeffPackage::new);
+  public static final RegistryDelegate<DeffPackage> SUCKY_SUCKY = REGISTRAR.register("sucky_sucky", KiwiBossDeffPackage::new);
+  public static final RegistryDelegate<DeffPackage> DEVOUR = REGISTRAR.register("devour", KiwiBossDeffPackage::new);
 
   static void register(final RegisterDeffsEvent event) {
     REGISTRAR.registryEvent(event);
