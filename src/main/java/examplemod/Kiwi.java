@@ -52,7 +52,7 @@ public class Kiwi {
 
   @EventListener
   public void onInputPressed(final InputPressedEvent event) {
-    if(submapCut_80052c30 == 0 && event.action == INPUT_ACTION_SMAP_INTERACT.get()) {
+    if(submapCut_80052c30 == 8 && event.action == INPUT_ACTION_SMAP_INTERACT.get()) {
       this.isKiwiEncounter = true;
       SBtld.startEncounter(COUNT_DRAKIWI.get(), 38);
       ((SMap)currentEngineState_8004dd04).smapLoadingStage_800cb430 = SubmapState.TRANSITION_TO_COMBAT_19;
